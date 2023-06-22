@@ -2,7 +2,7 @@
 
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
-use yii\bootstrap4\Modal;
+use yii\bootstrap5\Modal;
 use yii\helpers\Url;
 use yii\helpers\Html;
 
@@ -16,7 +16,7 @@ echo "<?php\n";
 ?>
 use yii\helpers\Url;
 use yii\helpers\Html;
-use yii\bootstrap4\Modal;
+use yii\bootstrap5\Modal;
 use kartik\grid\GridView;
 use yii2ajaxcrud\ajaxcrud\CrudAsset;
 use yii2ajaxcrud\ajaxcrud\BulkButtonWidget;
@@ -50,6 +50,7 @@ CrudAsset::register($this);
                 ],
             ],          
             'striped' => true,
+            'hover' => true,
             'condensed' => true,
             'responsive' => true,          
             'panel' => [

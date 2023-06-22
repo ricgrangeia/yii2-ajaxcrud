@@ -61,12 +61,27 @@ For first you must enable Gii module Read more about [Gii code generation tool](
 
 Because this extension used [kartik-v/yii2-grid](https://github.com/kartik-v/yii2-grid) extensions so we must config gridview module before
 
-Let 's add into modules config in your main config file
+Let's add into modules config in your main config file
 ```php
 'modules' => [
     'gridview' =>  [
         'class' => '\kartik\grid\Module'
     ]       
+]
+```
+
+Add translation to the config
+```php
+'components' => [
+    'i18n' => [
+        'translations' => [
+            'yii2-ajaxcrud' => [
+                'class' => 'yii\i18n\PhpMessageSource',
+                'basePath' => '@yii2ajaxcrud/ajaxcrud/messages',
+                'sourceLanguage' => 'en',
+            ],
+        ]
+    ]
 ]
 ```
 
@@ -80,7 +95,7 @@ and you can see <b>Ajax CRUD Generator</b>
 
 Translate
 ---------
-Default translation is english, you can pull request new translation and you can change via config. Open your config `main.php`, add new translation to components..
+Default translation is english, you can pull request new translation and you can change via config. Open your config `main.php`, change the language and translation `sourceLanguage`
 
 Available Translation :
 + English

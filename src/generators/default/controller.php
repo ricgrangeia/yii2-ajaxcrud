@@ -101,12 +101,12 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
         {
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
-                'title'=> "<?= $modelClass ?> #".<?= $actionParams ?>,
-                'content'=>$this->renderAjax('view', [
+                'title' => "<?= $modelClass ?> #".<?= $actionParams ?>,
+                'content' =>$this->renderAjax('view', [
                     'model' => $this->findModel(<?= $actionParams ?>),
                 ]),
-                'footer'=> Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                    Html::a(Yii::t('yii2-ajaxcrud', 'Update'), ['update','<?= substr($actionParams,1) ?>'=><?= $actionParams ?>],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                'footer' => Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class' => 'btn btn-default pull-left', 'data-bs-dismiss' => 'modal']).
+                    Html::a(Yii::t('yii2-ajaxcrud', 'Update'), ['update', '<?= substr($actionParams,1) ?>' => <?= $actionParams ?>], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
             ];
         }
         else
@@ -137,33 +137,33 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
             if($request->isGet)
             {
                 return [
-                    'title'=> Yii::t('yii2-ajaxcrud', 'Create New')." <?= $modelClass ?>",
-                    'content'=>$this->renderAjax('create', [
+                    'title' => Yii::t('yii2-ajaxcrud', 'Create New')." <?= $modelClass ?>",
+                    'content' => $this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                        Html::button(Yii::t('yii2-ajaxcrud', 'Create'), ['class'=>'btn btn-primary','type'=>"submit"])
+                    'footer' => Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class' => 'btn btn-default pull-left', 'data-bs-dismiss' => 'modal']).
+                        Html::button(Yii::t('yii2-ajaxcrud', 'Create'), ['class' => 'btn btn-primary', 'type' => 'submit'])
                 ];
             }
             else if($model->load($request->post()) && $model->save())
             {
                 return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> Yii::t('yii2-ajaxcrud', 'Create New')." <?= $modelClass ?>",
-                    'content'=>'<span class="text-success">'.Yii::t('yii2-ajaxcrud', 'Create').' <?= $modelClass ?> '.Yii::t('yii2-ajaxcrud', 'Success').'</span>',
-                    'footer'=> Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                        Html::a(Yii::t('yii2-ajaxcrud', 'Create More'), ['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                    'forceReload' => '#crud-datatable-pjax',
+                    'title' => Yii::t('yii2-ajaxcrud', 'Create New')." <?= $modelClass ?>",
+                    'content' => '<span class="text-success">'.Yii::t('yii2-ajaxcrud', 'Create').' <?= $modelClass ?> '.Yii::t('yii2-ajaxcrud', 'Success').'</span>',
+                    'footer' =>  Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class' => 'btn btn-default pull-left', 'data-bs-dismiss' => 'modal']).
+                        Html::a(Yii::t('yii2-ajaxcrud', 'Create More'), ['create'], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
                 ];
             }
             else
             {
                 return [
-                    'title'=> Yii::t('yii2-ajaxcrud', 'Create New')." <?= $modelClass ?>",
-                    'content'=>$this->renderAjax('create', [
+                    'title' => Yii::t('yii2-ajaxcrud', 'Create New')." <?= $modelClass ?>",
+                    'content' => $this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                        Html::button(Yii::t('yii2-ajaxcrud', 'Save'), ['class'=>'btn btn-primary','type'=>"submit"])
+                    'footer' => Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class' => 'btn btn-default pull-left', 'data-bs-dismiss' => 'modal']).
+                        Html::button(Yii::t('yii2-ajaxcrud', 'Save'), ['class' => 'btn btn-primary', 'type' => 'submit'])
                 ];
             }
         }
@@ -207,35 +207,35 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
             if($request->isGet)
             {
                 return [
-                    'title'=> Yii::t('yii2-ajaxcrud', 'Update')." <?= $modelClass ?> #".<?= $actionParams ?>,
-                    'content'=>$this->renderAjax('update', [
+                    'title' => Yii::t('yii2-ajaxcrud', 'Update')." <?= $modelClass ?> #".<?= $actionParams ?>,
+                    'content' => $this->renderAjax('update', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                        Html::button(Yii::t('yii2-ajaxcrud', 'Save'), ['class'=>'btn btn-primary','type'=>"submit"])
+                    'footer' => Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class' => 'btn btn-default pull-left', 'data-bs-dismiss' => 'modal']).
+                        Html::button(Yii::t('yii2-ajaxcrud', 'Save'), ['class' => 'btn btn-primary', 'type' => 'submit'])
                 ];   
             }
             else if($model->load($request->post()) && $model->save())
             {
                 return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "<?= $modelClass ?> #".<?= $actionParams ?>,
-                    'content'=>$this->renderAjax('view', [
+                    'forceReload' => '#crud-datatable-pjax',
+                    'title' => "<?= $modelClass ?> #".<?= $actionParams ?>,
+                    'content' => $this->renderAjax('view', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                        Html::a(Yii::t('yii2-ajaxcrud', 'Update'), ['update','<?= substr($actionParams,1) ?>'=><?= $actionParams ?>],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                    'footer' => Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class' => 'btn btn-default pull-left', 'data-bs-dismiss' => 'modal']).
+                        Html::a(Yii::t('yii2-ajaxcrud', 'Update'), ['update', '<?= substr($actionParams,1) ?>' => <?= $actionParams ?>],['class' => 'btn btn-primary', 'role' => 'modal-remote'])
                 ];
             }
             else
             {
                  return [
-                    'title'=> Yii::t('yii2-ajaxcrud', 'Update')." <?= $modelClass ?> #".<?= $actionParams ?>,
-                    'content'=>$this->renderAjax('update', [
+                    'title' => Yii::t('yii2-ajaxcrud', 'Update')." <?= $modelClass ?> #".<?= $actionParams ?>,
+                    'content' => $this->renderAjax('update', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                        Html::button(Yii::t('yii2-ajaxcrud', 'Save'), ['class'=>'btn btn-primary','type'=>"submit"])
+                    'footer' => Html::button(Yii::t('yii2-ajaxcrud', 'Close'), ['class' => 'btn btn-default pull-left', 'data-bs-dismiss' => 'modal']).
+                        Html::button(Yii::t('yii2-ajaxcrud', 'Save'), ['class' => 'btn btn-primary', 'type' => 'submit'])
                 ];
             }
         }
