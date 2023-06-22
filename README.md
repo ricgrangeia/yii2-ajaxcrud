@@ -12,15 +12,15 @@ But we need to work with Bootstrap 4, so we create this repository. If [johitvn]
 
 Gii CRUD template for Single Page Ajax Administration for yii2 
 
-![index](https://images2.imagebam.com/3f/78/46/55b13c1355690747.png "index")
+<img src="img/index.png" alt="index" >
 
-![create](https://images2.imagebam.com/37/59/af/5af93f1355690748.png "create")
+<img src="img/create.png" alt="create" >
 
-![view](https://images2.imagebam.com/dd/11/29/b7c7361355690749.png "view")
+<img src="img/view.png" alt="view" >
 
-![update](https://images2.imagebam.com/80/d7/31/3b9f601355690751.png "update")
+<img src="img/update.png" alt="update" >
 
-![delete](https://images2.imagebam.com/b0/98/11/a716401355690754.png "delete")
+<img src="img/delete.png" alt="delete" >
 
 
 Features
