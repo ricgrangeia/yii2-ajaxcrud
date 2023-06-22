@@ -29,7 +29,7 @@ Features
 + Bulk delete suport
 + Pjax widget suport
 + Export function(pdf,html,text,csv,excel,json)
-+ Support Boostrap 4
++ Support Boostrap 4/5
 + Added translations, available right now only English and Indonesia
 + Reload multiple Pjax
 
@@ -40,6 +40,22 @@ Installation
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 Either run
+
+```
+php composer.phar require --prefer-dist biladina/yii2-ajaxcrud-bs4 "~3.0"
+```
+
+or add
+
+```
+"biladina/yii2-ajaxcrud-bs4": "~3.0"
+```
+
+to the require section of your `composer.json` file.
+
+
+
+If you still need the Boostrap 4 version, you can run
 
 ```
 php composer.phar require --prefer-dist biladina/yii2-ajaxcrud-bs4 "~2.0"
