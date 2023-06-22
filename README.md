@@ -37,6 +37,8 @@ Features
 Installation
 ------------
 
+The default installation is using Bootstrap 5.
+
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 Either run
