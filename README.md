@@ -54,8 +54,9 @@ or add
 to the require section of your `composer.json` file.
 
 
-
-If you still need the Boostrap 4 version, you can run
+Bootstrap 4
+------------
+If you still need the Boostrap 4 version, you can use version 2
 
 ```
 php composer.phar require --prefer-dist biladina/yii2-ajaxcrud-bs4 "~2.0"
