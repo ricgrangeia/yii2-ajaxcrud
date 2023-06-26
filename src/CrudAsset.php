@@ -23,32 +23,31 @@ class CrudAsset extends AssetBundle
 
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap5\BootstrapAsset',
-        'yii\bootstrap5\BootstrapPluginAsset',
+        'yii\bootstrap4\BootstrapAsset',
+        'yii\bootstrap4\BootstrapPluginAsset',
         'kartik\grid\GridViewAsset',
         'yii2ajaxcrud\ajaxcrud\FontAwesomeAsset',
     ];
     
-    public function init()
-    {
-        // In dev mode use non-minified javascripts
-        $this->js = YII_DEBUG ? [
-            'ModalRemote.js',
-            'ajaxcrud.js',
-        ] : [
-            'ModalRemote.min.js',
-            'ajaxcrud.min.js',
+   public function init() {
+       // In dev mode use non-minified javascripts
+       $this->js = YII_DEBUG ? [
+           'ModalRemote.js',
+           'ajaxcrud.js',
+       ]:[
+           'ModalRemote.min.js',
+           'ajaxcrud.min.js',
+       ];
+
+       parent::init();
+
+      if (!isset(Yii::$app->i18n->translations['yii2-ajaxcrud']))
+      {
+        Yii::$app->i18n->translations['yii2-ajaxcrud'] = [
+          'class' => 'yii\i18n\PhpMessageSource',
+          'basePath' => '@yii2ajaxcrud/ajaxcrud/messages',
+          'sourceLanguage' => 'en',
         ];
-
-        parent::init();
-
-        if (!isset(Yii::$app->i18n->translations['yii2-ajaxcrud']))
-        {
-            Yii::$app->i18n->translations['yii2-ajaxcrud'] = [
-                'class' => 'yii\i18n\PhpMessageSource',
-                'basePath' => '@yii2ajaxcrud/ajaxcrud/messages',
-                'sourceLanguage' => 'en',
-            ];
-        }
-    }
+      }
+   }
 }
